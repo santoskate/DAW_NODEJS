@@ -1,0 +1,169 @@
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	 
+	$(document).ready(function(){
+	 
+		$(".slidingDiv").show();
+		$(".slidingDiv2").hide();
+		$(".slidingDiv3").hide();
+		$(".slidingDiv4").hide();
+		$(".slidingDiv5").hide();
+		$(".show_hide").show();
+		$(".show_hide2").show();
+		$(".show_hide3").show();
+		$(".show_hide4").show();
+		$(".show_hide5").show();
+		
+		$('.show_hide').click(function(){
+			$(".slidingDiv").slideToggle();
+			$(".slidingDiv2").hide();
+			$(".slidingDiv3").hide();
+			$(".slidingDiv4").hide();
+			$(".slidingDiv5").hide();
+		});
+		$('.show_hide2').click(function(){
+			$(".slidingDiv").hide();
+			$(".slidingDiv2").slideToggle();
+			$(".slidingDiv3").hide();
+			$(".slidingDiv4").hide();
+			$(".slidingDiv5").hide();
+		});
+		$('.show_hide3').click(function(){
+			$(".slidingDiv").hide();
+			$(".slidingDiv2").hide();
+			$(".slidingDiv3").slideToggle();
+			$(".slidingDiv4").hide();
+			$(".slidingDiv5").hide();
+		});
+		$('.show_hide4').click(function(){
+			$(".slidingDiv").hide();
+			$(".slidingDiv2").hide();
+			$(".slidingDiv3").hide();
+			$(".slidingDiv4").slideToggle();
+			$(".slidingDiv5").hide();
+		});
+		$('.show_hide5').click(function(){
+			$(".slidingDiv").hide();
+			$(".slidingDiv2").hide();
+			$(".slidingDiv3").hide();
+			$(".slidingDiv4").hide();
+			$(".slidingDiv5").slideToggle();
+		});
+	 
+	});
+	 
+	</script>
+	<style>
+		.slidingDiv, .slidingDiv2, .slidingDiv3, .slidingDiv4, .slidingDiv5 {
+		    height:300px;
+		    background-color: #99CCFF;
+		    padding:20px;
+		    margin-top:10px;
+		    border-bottom:5px solid #3399FF;
+		}
+		 
+		.show_hide {
+		    display:none;
+		}
+	</style>
+</head>
+<body>
+	<a id="src1" class="show_hide" href="#">Pesquisa 1</a>
+	<a id="src2" class="show_hide2" href="#">Pesquisa 2</a>
+	<a id="src3" class="show_hide3" href="#">Pesquisa 3</a>
+	<a id="src4" class="show_hide4" href="#">Pesquisa 4</a>
+	<a id="src5" class="show_hide5" href="#">Contacto</a>
+	<br />
+	<div class="slidingDiv">
+		<form id="formget" action="/search/:category/:subject" method="get">
+			<h1>Pesquisa 1 - GET</h1>
+			<label for="category">Categoria</label>
+			<input type="text" id="category" name="category" />
+			<br/>
+			<label for="subject">Descri&ccedil;&atilde;o</label>
+			<input type="text" id="subject" name="subject"/>
+			<br/>
+			<input type="submit" value="Pesquisar"/>
+		</form>
+	</div>
+	<div class="slidingDiv2">
+		<form id="formget" action="/search/:category/price/:condition/:price" method="get">
+			<h1>Pesquisa 2 - GET</h1>
+			<label for="category">Categoria</label>
+			<input type="text" id="category" name="category"/>
+			<br/>
+			<label for="condition">Condi&ccedil;&atilde;o</label>
+			<select type="text" id="condition" name="condition">
+				<option value="-1"></option>
+				<option value="smaller">Smaller</option>
+				<option value="bigger">Bigger</option>
+			</select>
+			<br/>
+			<label for="price">Pre&ccedil;o</label>
+			<input type="text" id="price" name="price"/>
+			<br/>
+			<input type="submit" value="Pesquisar" />
+		</form>
+	</div>
+	<div class="slidingDiv3">
+		<form method="post" action="/search" enctype="application/x-www-form-urlencoded">
+			<h1>Pesquisa 3 - POST</h1>
+			<label for="category">Categoria</label>
+			<input type="text" id="category" name="category" />
+			<br/>
+			<label for="subject">Descri&ccedil;&atilde;o</label>
+			<input type="text" id="subject" name="subject"/>
+			<br/>
+			<label for="price">Pre&ccedil;o</label>
+			<input type="text" id="price" name="price"/>
+			<br/>
+			<label for="city">Cidade</label>
+			<input type="text" id="city" name="city"/>
+			<br/>
+			<input type="submit" id="submit" value="Pesquisar"/>
+		</form>
+	</div>
+	<div class="slidingDiv4">
+		<form id="formget" action="/search/:subject" method="get">
+			<h1>Pesquisa 4 - GET</h1>
+			<label for="subject">Descri&ccedil;&atilde;o</label>
+			<input type="text" id="subject" name="subject" />
+			<br/>
+			<input type="submit" value="Pesquisar" />
+		</form>	
+	</div>
+	<div class="slidingDiv5">
+		<form action="/send" method="post" enctype="application/x-www-form-urlencoded">
+			<input type="hidden" name="offer_type" value="0"/>
+			<h1>Contactar anunciante - POST</h1>
+			<label for="user_id">ID do anunciante</label>
+			<input type="text" name="user_id" />
+			<br/>
+			<label for="anuncio_id">ID do anuncio</label>
+			<input type="text" name="anuncio_id" />
+			<br/>
+			<label for="price">Pre&ccedil;o</label>
+			<input type="text" name="price" />
+			<br/>
+			<label for="text">Mensagem</label>
+			<input type="text" name="text" />
+			<br/>
+			<label for="name">Nome</label>
+			<input type="text" name="name" />
+			<br/>
+			<label for="phonenr">N&uacute;mero telem&oacute;vel</label>
+			<input type="text" name="phonenr" />
+			<br/>
+			<label for="email">Email</label>
+			<input type="email" name="email" />
+			<br/>
+			<label for="copy">Enviar c&oacute;pia para o meu email</label>
+			<input type="checkbox" name="copy" />
+			<br/>
+			<input type="submit" value="Enviar"/>
+		</form>
+	</div>
+</body>
+</html>

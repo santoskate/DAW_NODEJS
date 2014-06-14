@@ -198,7 +198,7 @@ function gunzipJSON(response, cb){
 			}
 			var price;
 			if(aux[i]) price = aux[i].replace('.', '').replace(',', '.');
-			results = results + ' ------------------------------ ' + title + ' - ' + price;
+			results = results + ' <br /> ' + title + ' - ' + price;
 			//console.log(title + ' - ' + price);
 			response.json({'data': title + ' - ' + price});
 		});

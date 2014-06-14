@@ -1,10 +1,12 @@
 var express = require('express'),
   api = require('./routes/api'),
-  bodyParser = require('body-parser');
+  bodyParser = require('body-parser'),
+	json = require('json');
 
 var app = express();
 
 app.use(bodyParser());
+app.use(json);
 
 app.set('views', __dirname + '/');
 app.engine('html', require('ejs').renderFile);

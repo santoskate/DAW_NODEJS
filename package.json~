@@ -12,9 +12,11 @@
     "cheerio": "*",
     "request": "*",
     "body-parser": "*",
+    "chai": "*",
     "cli-color": "*",
     "connect": "*",
-    "form-data": "*"
+    "form-data": "*",
+    "mocha": "*"
   },
   "main": "./main.js",
   "engines": {
